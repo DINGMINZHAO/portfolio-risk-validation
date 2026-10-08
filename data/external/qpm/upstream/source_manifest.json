@@ -1,0 +1,61 @@
+{
+  "repository": "AhmadMujtaba200210/qpm-project",
+  "commit": "96ab45ff7bdc12ee9e220d1ade5138e571f520e4",
+  "retrieved_at_utc": "2026-10-07T09:39:53.227911+00:00",
+  "files": [
+    {
+      "repo_path": "data/raw/raw_adj_close_prices.csv",
+      "local_path": "data/raw/qpm/raw_adj_close_prices.csv",
+      "role": "raw_market_input",
+      "source_url": "https://raw.githubusercontent.com/AhmadMujtaba200210/qpm-project/96ab45ff7bdc12ee9e220d1ade5138e571f520e4/data/raw/raw_adj_close_prices.csv",
+      "bytes": 786475,
+      "git_blob_sha": "e940e483acdab1219e74ac08a56ee72149d724c7",
+      "sha256": "1ea3c2450547adc4e913a27c9617144f649bba4dcc4c5463a46574b7e2f72f81"
+    },
+    {
+      "repo_path": "data/raw/raw_risk_free_rate.csv",
+      "local_path": "data/raw/qpm/raw_risk_free_rate.csv",
+      "role": "raw_market_input",
+      "source_url": "https://raw.githubusercontent.com/AhmadMujtaba200210/qpm-project/96ab45ff7bdc12ee9e220d1ade5138e571f520e4/data/raw/raw_risk_free_rate.csv",
+      "bytes": 89272,
+      "git_blob_sha": "a01547dae76fe920edb139cd3c0bb8f0ea62ccc8",
+      "sha256": "fa59b6f7a79cbfed704afcd5194293db069dcc954044b71ff0025980bdd9ff13"
+    },
+    {
+      "repo_path": "data/processed/portfolio_weights.csv",
+      "local_path": "data/external/qpm/upstream/portfolio_weights.csv",
+      "role": "upstream_reference",
+      "source_url": "https://raw.githubusercontent.com/AhmadMujtaba200210/qpm-project/96ab45ff7bdc12ee9e220d1ade5138e571f520e4/data/processed/portfolio_weights.csv",
+      "bytes": 189044,
+      "git_blob_sha": "21cbe91a7ab736f7c77c9d0f74609675a6f6d6f2",
+      "sha256": "6bee2087ebf8764e306cc41295497c93aa0cd5d2288e4018e6983c4ffa5030d4"
+    },
+    {
+      "repo_path": "data/processed/monthly_rebal_dates.csv",
+      "local_path": "data/external/qpm/upstream/monthly_rebal_dates.csv",
+      "role": "upstream_reference",
+      "source_url": "https://raw.githubusercontent.com/AhmadMujtaba200210/qpm-project/96ab45ff7bdc12ee9e220d1ade5138e571f520e4/data/processed/monthly_rebal_dates.csv",
+      "bytes": 2568,
+      "git_blob_sha": "9c663e52e64c1d0784f2ad1e5c96e9e55b259cf5",
+      "sha256": "3dbe3012757e1198f44978fb72c3946c7d004384ac4d461bab7cdd8c499469dc"
+    },
+    {
+      "repo_path": "data/processed/regime_labels.csv",
+      "local_path": "data/external/qpm/upstream/regime_labels.csv",
+      "role": "upstream_reference",
+      "source_url": "https://raw.githubusercontent.com/AhmadMujtaba200210/qpm-project/96ab45ff7bdc12ee9e220d1ade5138e571f520e4/data/processed/regime_labels.csv",
+      "bytes": 86461,
+      "git_blob_sha": "3f1595d68b91ecf983b4656ce39f1957b3035747",
+      "sha256": "9c60dfd4f6912283396a359b6d8ee32300132c6a01296370a12016af3a869eb4"
+    },
+    {
+      "repo_path": "data/processed/backtest_results.csv",
+      "local_path": "data/external/qpm/upstream/backtest_results.csv",
+      "role": "upstream_reference",
+      "source_url": "https://raw.githubusercontent.com/AhmadMujtaba200210/qpm-project/96ab45ff7bdc12ee9e220d1ade5138e571f520e4/data/processed/backtest_results.csv",
+      "bytes": 1325305,
+      "git_blob_sha": "5a7ca73ab58e2ee48eacdc394e64a2e5759b844c",
+      "sha256": "1b0cb512c038d49f37d07b781884ccb2798b64cd96b2448d507bac4b8e7d84ea"
+    }
+  ]
+}

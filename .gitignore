@@ -1,0 +1,36 @@
+# macOS
+.DS_Store
+
+# VS Code
+.vscode/
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Environments
+.venv/
+venv/
+env/
+.env
+.env.*
+
+# Temporary files
+*.log
+*.tmp
+
+# Large generated daily risk forecasts
+data/processed/qpm/*_var_es_forecasts.csv
+
+# Generated daily backtesting data
+data/processed/qpm/var_backtest_daily.csv
+
+# Generated daily diagnostic data
+data/processed/qpm/garch_student_t_pit_daily.csv
+data/processed/qpm/garch_normal_standardized_innovations.csv
+
+# Third-party upstream datasets
+data/external/qpm/upstream/*.csv
+data/raw/qpm/*.csv
