@@ -66,13 +66,21 @@ Third-party raw datasets are excluded from this repository.
 - `reports/figures/` — Risk model diagnostics and backtesting figures.
 - `requirements.txt` — Python dependencies.
 
+
 ## Research Status
 
-Five risk models have been implemented and evaluated through VaR backtesting. Residual diagnostics and exceedance timing analysis are also complete.
+Five baseline VaR and ES forecasting models have been implemented and evaluated across five portfolio strategies.
 
-The next steps include investigating exceedance clustering, ES backtesting, stress testing, and cross-strategy risk comparison.
+VaR validation includes unconditional coverage, exceedance independence, PIT diagnostics, and tail-event analysis. ES validation includes exceedance residuals and joint VaR–ES scoring.
 
-Further model development on the existing backtesting period will be treated as exploratory to account for potential backtest overfitting.
+GARCH-FHS achieved the lowest mean joint VaR–ES score among the five baseline models across all portfolios at both the 95% and 99% confidence levels. Exceedance clustering remains an important limitation.
+
+Exploratory distribution modeling includes KDE, Gaussian mixtures, and Student-t mixtures. These methods did not demonstrate a material predictive improvement over GARCH-FHS in the evaluated minimum-variance portfolio.
+
+The next stages are historical and hypothetical stress testing, followed by cross-strategy portfolio risk assessment.
+
+Additional model experiments on previously examined data are treated as exploratory.
+
 
 ## Reproducibility
 

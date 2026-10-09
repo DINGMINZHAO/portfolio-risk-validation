@@ -34,3 +34,14 @@ data/processed/qpm/garch_normal_standardized_innovations.csv
 # Third-party upstream datasets
 data/external/qpm/upstream/*.csv
 data/raw/qpm/*.csv
+
+
+# Generated daily research outputs
+data/processed/qpm/*_daily.csv
+data/processed/qpm/*_events.csv
+
+# Reconstructable intermediate data
+data/processed/qpm/garch_fhs_april_2025_minvar_static.csv
+data/processed/qpm/garch_fhs_density_window_audit.csv
+data/processed/qpm/garch_fhs_kde_crps_comparison.csv
+data/processed/qpm/garch_fhs_oos_innovations.csv
