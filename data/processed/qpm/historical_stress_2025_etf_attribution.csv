@@ -1,0 +1,121 @@
+window,strategy,asset,contribution
+Crash,meanvar_static,SPY,-0.024818784802
+Crash,meanvar_static,EFA,0.000000000000
+Crash,meanvar_static,EEM,0.000000000000
+Crash,meanvar_static,TLT,0.000000000000
+Crash,meanvar_static,IEF,-0.001334759464
+Crash,meanvar_static,GLD,-0.017962427209
+Crash,meanvar_static,VNQ,-0.000000000000
+Crash,meanvar_static,DBC,0.000000000000
+Crash,meanvar_regime,SPY,-0.024818784802
+Crash,meanvar_regime,EFA,0.000000000000
+Crash,meanvar_regime,EEM,0.000000000000
+Crash,meanvar_regime,TLT,0.000000000000
+Crash,meanvar_regime,IEF,-0.001334759464
+Crash,meanvar_regime,GLD,-0.017962427209
+Crash,meanvar_regime,VNQ,-0.000000000000
+Crash,meanvar_regime,DBC,0.000000000000
+Crash,minvar_static,SPY,-0.022157178984
+Crash,minvar_static,EFA,-0.009257839214
+Crash,minvar_static,EEM,-0.000000000000
+Crash,minvar_static,TLT,-0.002490080239
+Crash,minvar_static,IEF,-0.001275679421
+Crash,minvar_static,GLD,-0.001590463869
+Crash,minvar_static,VNQ,-0.000000000000
+Crash,minvar_static,DBC,-0.025127129219
+Crash,minvar_regime,SPY,-0.022157178984
+Crash,minvar_regime,EFA,-0.009257839214
+Crash,minvar_regime,EEM,-0.000000000000
+Crash,minvar_regime,TLT,-0.002490080239
+Crash,minvar_regime,IEF,-0.001275679421
+Crash,minvar_regime,GLD,-0.001590463869
+Crash,minvar_regime,VNQ,-0.000000000000
+Crash,minvar_regime,DBC,-0.025127129219
+Crash,ew_static,SPY,-0.015361040817
+Crash,ew_static,EFA,-0.013960095100
+Crash,ew_static,EEM,-0.015502520159
+Crash,ew_static,TLT,-0.003851061723
+Crash,ew_static,IEF,-0.000364624494
+Crash,ew_static,GLD,-0.005534738523
+Crash,ew_static,VNQ,-0.015803006689
+Crash,ew_static,DBC,-0.013926651478
+Rebound,meanvar_static,SPY,0.023997559039
+Rebound,meanvar_static,EFA,0.000000000000
+Rebound,meanvar_static,EEM,0.000000000000
+Rebound,meanvar_static,TLT,0.000000000000
+Rebound,meanvar_static,IEF,0.005278722734
+Rebound,meanvar_static,GLD,0.041427886875
+Rebound,meanvar_static,VNQ,0.000000000000
+Rebound,meanvar_static,DBC,0.000000000000
+Rebound,meanvar_regime,SPY,0.023997559039
+Rebound,meanvar_regime,EFA,0.000000000000
+Rebound,meanvar_regime,EEM,0.000000000000
+Rebound,meanvar_regime,TLT,0.000000000000
+Rebound,meanvar_regime,IEF,0.005278722734
+Rebound,meanvar_regime,GLD,0.041427886875
+Rebound,meanvar_regime,VNQ,0.000000000000
+Rebound,meanvar_regime,DBC,0.000000000000
+Rebound,minvar_static,SPY,0.021233796829
+Rebound,minvar_static,EFA,0.012830934181
+Rebound,minvar_static,EEM,0.000000000000
+Rebound,minvar_static,TLT,0.001081817935
+Rebound,minvar_static,IEF,0.005125243537
+Rebound,minvar_static,GLD,0.003692535357
+Rebound,minvar_static,VNQ,0.000000000000
+Rebound,minvar_static,DBC,0.004479261791
+Rebound,minvar_regime,SPY,0.021233796829
+Rebound,minvar_regime,EFA,0.012830934181
+Rebound,minvar_regime,EEM,0.000000000000
+Rebound,minvar_regime,TLT,0.001081817935
+Rebound,minvar_regime,IEF,0.005125243537
+Rebound,minvar_regime,GLD,0.003692535357
+Rebound,minvar_regime,VNQ,0.000000000000
+Rebound,minvar_regime,DBC,0.004479261791
+Rebound,ew_static,SPY,0.014927208675
+Rebound,ew_static,EFA,0.019739830684
+Rebound,ew_static,EEM,0.016760072836
+Rebound,ew_static,TLT,0.001796483754
+Rebound,ew_static,IEF,0.001679490842
+Rebound,ew_static,GLD,0.013055485682
+Rebound,ew_static,VNQ,0.013387986133
+Rebound,ew_static,DBC,0.002417400863
+Full Event,meanvar_static,SPY,-0.001879901393
+Full Event,meanvar_static,EFA,0.000000000000
+Full Event,meanvar_static,EEM,0.000000000000
+Full Event,meanvar_static,TLT,0.000000000000
+Full Event,meanvar_static,IEF,0.003711087288
+Full Event,meanvar_static,GLD,0.021637828190
+Full Event,meanvar_static,VNQ,-0.000000000000
+Full Event,meanvar_static,DBC,0.000000000000
+Full Event,meanvar_regime,SPY,-0.001879901393
+Full Event,meanvar_regime,EFA,0.000000000000
+Full Event,meanvar_regime,EEM,0.000000000000
+Full Event,meanvar_regime,TLT,0.000000000000
+Full Event,meanvar_regime,IEF,0.003711087288
+Full Event,meanvar_regime,GLD,0.021637828190
+Full Event,meanvar_regime,VNQ,-0.000000000000
+Full Event,meanvar_regime,DBC,0.000000000000
+Full Event,minvar_static,SPY,-0.002237719587
+Full Event,minvar_static,EFA,0.002778881044
+Full Event,minvar_static,EEM,-0.000000000000
+Full Event,minvar_static,TLT,-0.001475225072
+Full Event,minvar_static,IEF,0.003532319891
+Full Event,minvar_static,GLD,0.001873509565
+Full Event,minvar_static,VNQ,-0.000000000000
+Full Event,minvar_static,DBC,-0.020925126436
+Full Event,minvar_regime,SPY,-0.002237719587
+Full Event,minvar_regime,EFA,0.002778881044
+Full Event,minvar_regime,EEM,-0.000000000000
+Full Event,minvar_regime,TLT,-0.001475225072
+Full Event,minvar_regime,IEF,0.003532319891
+Full Event,minvar_regime,GLD,0.001873509565
+Full Event,minvar_regime,VNQ,-0.000000000000
+Full Event,minvar_regime,DBC,-0.020925126436
+Full Event,ew_static,SPY,-0.001692251646
+Full Event,ew_static,EFA,0.004115594050
+Full Event,ew_static,EEM,-0.000155384129
+Full Event,ew_static,TLT,-0.002206028267
+Full Event,ew_static,IEF,0.001173278990
+Full Event,ew_static,GLD,0.006420120902
+Full Event,ew_static,VNQ,-0.003543677845
+Full Event,ew_static,DBC,-0.011713046546
