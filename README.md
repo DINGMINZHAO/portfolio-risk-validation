@@ -1,91 +1,96 @@
-# Beyond Optimization
-## Independent Portfolio Risk Assessment
+# Portfolio Risk Assessment and Model Validation
 
-**Research Question:** Does portfolio optimization deliver robust risk reduction across different risk measures and market conditions?
+*An Independent Evaluation of Five Portfolio Strategies*
 
-## Overview
+Hi, welcome! 👋
 
-I reconstruct daily portfolio returns using externally developed portfolio weights and build an independent risk modeling and validation framework.
+I use portfolio weights from the open-source [qpm-project](https://github.com/AhmadMujtaba200210/qpm-project) to reconstruct daily returns for five portfolio strategies. I then measure their risk, test Value at Risk (VaR) and Expected Shortfall (ES) forecasts, and see how they perform under market stress.
 
-I implement five risk models to estimate Value at Risk (VaR) and Expected Shortfall (ES), evaluate forecast reliability, and analyze tail-risk dynamics.
+The main question is simple: **How do these portfolios hold up when markets get rough?**
 
-I investigate how portfolio optimization affects downside risk across different risk measures and market conditions, identifying the extent and limitations of risk reduction.
+**[Read the full report](reports/Beyond_Optimization_Research_Report.md)**
 
-## Key Findings
+## At a glance
 
-GARCH-FHS produced the most accurate 99% VaR coverage among the five risk models. The exceedance rates ranged from 0.99% to 1.20% across the five portfolios.
+| | Scope |
+|---|---|
+| **Portfolios** | Equal Weight, MinVar Static, MinVar Regime, MeanVar Static, MeanVar Regime |
+| **Assets** | SPY, EFA, EEM, TLT, IEF, GLD, VNQ, DBC |
+| **Risk models** | Rolling Normal, Historical Simulation, GARCH-Normal, GARCH-Student-t, GARCH-FHS |
+| **Validation** | One-day VaR/ES forecasts at 95% and 99%; Kupiec and Christoffersen tests; ES residuals and FZ0 scoring |
+| **Stress tests** | COVID crash (2020), inflation and rate hikes (2022), April trade shock (2025), and three hypothetical 20-day scenarios |
+| **Sample** | 2006–2025 portfolio analysis; 3,839 VaR/ES backtesting days (2010–2025) |
 
-However, the exceedances were not independent. All five portfolios failed the Christoffersen independence test at both the 95% and 99% VaR levels.
+## Key findings
 
-GARCH-Normal underestimated tail risk at the 99% VaR level. Exceedance rates ranged from 1.82% to 2.19%.
+- **Portfolio risk:** All four optimized portfolios had lower volatility and smaller maximum drawdowns than Equal Weight over the full sample. MinVar Static had the lowest annualized volatility (**6.94%**), while MeanVar Regime had the highest annualized return (**9.16%**).
+- **VaR backtesting:** GARCH-FHS had 99% VaR exceedance rates of **0.99%–1.20%**, close to the expected 1%. But all five portfolios failed the exceedance independence test at both 95% and 99%.
+- **VaR and ES together:** GARCH-FHS had the lowest average FZ0 score among the five models for every portfolio at both confidence levels.
+- **Stress testing:** The optimized portfolios generally lost less during the three selected historical shocks. They also lost less than Equal Weight in all three hypothetical scenarios using the May 2025 weights. Regime-based constraints did not always help.
 
-GARCH-Student-t reduced these rates to 1.41%–1.64%, but all five portfolios still failed the 99% Kupiec test.
+## 1. Portfolio risk and return
 
-Rolling Normal also underestimated tail risk at the 99% VaR level. Exceedance rates ranged from 1.93% to 2.14%.
+I compare the five portfolios using annualized return, annualized volatility, and maximum drawdown. Equal Weight is the benchmark.
 
-Historical Simulation achieved rates of 0.89%–1.09%. However, its exceedances still showed significant temporal clustering.
+![Portfolio risk and return comparison](reports/figures/qpm/portfolio_risk_return.png)
 
-## Data and Portfolio Strategies
+| Portfolio | Annualized return | Annualized volatility | Maximum drawdown |
+|---|---:|---:|---:|
+| Equal Weight | 6.83% | 12.62% | −37.01% |
+| MinVar Static | 5.70% | **6.94%** | −18.95% |
+| MinVar Regime | 5.73% | 7.05% | −19.49% |
+| MeanVar Static | 9.09% | 9.28% | −19.34% |
+| MeanVar Regime | **9.16%** | 8.88% | **−18.94%** |
 
-I evaluate five portfolio strategies: Equal Weight, Static Minimum Variance, Regime-Based Minimum Variance, Static Mean-Variance, and Regime-Based Mean-Variance.
+## 2. VaR and ES model validation
 
-The portfolios consist of eight ETFs: SPY, EFA, EEM, TLT, IEF, GLD, VNQ, and DBC.
+I compare five methods for forecasting one-day VaR and ES. All five models use the same **3,839 backtesting days**, from September 3, 2010, to December 8, 2025.
 
-The common risk backtesting period runs from September 3, 2010, to December 8, 2025, with 3,839 trading days.
+I check **VaR coverage, exceedance independence, conditional coverage, exceedance timing, and joint VaR–ES scores**.
 
-## Risk Models
+![VaR backtesting results](reports/figures/qpm/var_backtesting_summary.png)
 
-I estimate one-day-ahead VaR and ES using five methods: Rolling Normal, Historical Simulation, GARCH-Normal, GARCH-Student-t, and GARCH-FHS.
+GARCH-FHS had exceedance rates close to the target levels, but VaR breaches still tended to happen in clusters. So I look at both *how often* losses exceed VaR and *when* they happen.
 
-Rolling Normal uses a 252-day window, while the other models use 1,008 days of historical data.
+You can also see the [VaR–ES FZ0 score comparison](reports/figures/qpm/joint_var_es_fz0_comparison.png).
 
-I re-estimate the GARCH parameters every 21 trading days and update the conditional volatility forecasts daily.
+## 3. Stress testing
 
-## Model Validation
+For **historical stress tests**, I compare portfolio returns during the 2020 COVID crash, the 2022 inflation and rate hikes, and the April 2025 trade policy shock.
 
-VaR forecasts are evaluated against realized portfolio losses at the 95% and 99% confidence levels.
+![Historical stress event return paths](reports/figures/qpm/historical_stress_paths.png)
 
-The Kupiec test assesses unconditional coverage, while the Christoffersen test examines exceedance independence.
+For **hypothetical stress tests**, I apply three 20-day asset return shocks—Equity Crash, Inflation and Rate Shock, and Joint Historical Worst—to portfolio weights from April 1 (Calm) and May 1 (Stressed), 2025.
 
-Additional diagnostics include standardized residuals, probability integral transforms (PIT), and VaR exceedance timing analysis.
+[See the hypothetical stress test results](reports/figures/qpm/hypothetical_stress_snapshots.png).
 
-## Data Provenance
+## Workflow and tools
 
-Portfolio weights and reference backtest data come from [AhmadMujtaba200210/qpm-project](https://github.com/AhmadMujtaba200210/qpm-project).
+| Stage | What I did |
+|---|---|
+| **Data checks** | Checked prices and weights, rebuilt daily returns, and compared them with the upstream backtest |
+| **Risk measurement** | Calculated annualized returns, volatility, maximum drawdown, and losses during market stress |
+| **Risk forecasting** | Built Rolling Normal, Historical Simulation, GARCH-Normal, GARCH-Student-t, and GARCH-FHS forecasts |
+| **Model validation** | Tested VaR coverage and independence, checked PIT and residuals, and compared ES forecasts using FZ0 scores |
+| **Stress testing** | Compared historical market shocks, hypothetical scenarios, and Static versus Regime allocations |
+| **Results** | Saved scripts, summary CSVs, figures, and a full report |
 
-The upstream data are linked to commit `96ab45ff7bdc12ee9e220d1ade5138e571f520e4`. The source manifest records the original file URLs and SHA-256 hashes.
+**Tools:** Python, pandas, NumPy, SciPy, ARCH/GARCH modeling, Matplotlib.
 
-Third-party raw datasets are excluded from this repository.
+## Where to find things
 
-## Repository Structure
+- [`scripts/`](scripts/) — Code for data checks, risk models, backtesting, and stress tests.
+- [`data/interim/qpm/`](data/interim/qpm/) — Daily asset and portfolio returns, plus portfolio weights.
+- [`data/processed/qpm/`](data/processed/qpm/) — Risk forecasts, backtesting results, and summary statistics.
+- [`reports/figures/qpm/`](reports/figures/qpm/) — Figures and diagnostics.
+- [`reports/Beyond_Optimization_Research_Report.md`](reports/Beyond_Optimization_Research_Report.md) — Full report with methods, results, tables, and figures.
 
-- `scripts/` — Risk models, backtesting, and diagnostic scripts.
-- `data/interim/qpm/` — Reconstructed portfolio returns, asset returns, and portfolio weights.
-- `data/processed/qpm/` — Risk model outputs and statistical test results.
-- `outputs/figures/` — Portfolio return diagnostics.
-- `reports/figures/` — Risk model diagnostics and backtesting figures.
-- `requirements.txt` — Python dependencies.
+## Data source and reproducibility
 
+The portfolio weights and optimization rules come from the open-source [qpm-project](https://github.com/AhmadMujtaba200210/qpm-project). My work starts with those portfolios and focuses on measuring and testing their risk.
 
-## Research Status
+I use a fixed version of the upstream data from commit [`96ab45f`](https://github.com/AhmadMujtaba200210/qpm-project/commit/96ab45ff7bdc12ee9e220d1ade5138e571f520e4). The [source manifest](data/external/qpm/upstream/source_manifest.json) lists the source files and hashes. The [`download_qpm_data.py`](scripts/download_qpm_data.py) script downloads the original inputs. Third-party raw data and large daily forecast files are not included in this repository.
 
-Five baseline VaR and ES forecasting models have been implemented and evaluated across five portfolio strategies.
+---
 
-VaR validation includes unconditional coverage, exceedance independence, PIT diagnostics, and tail-event analysis. ES validation includes exceedance residuals and joint VaR–ES scoring.
-
-GARCH-FHS achieved the lowest mean joint VaR–ES score among the five baseline models across all portfolios at both the 95% and 99% confidence levels. Exceedance clustering remains an important limitation.
-
-Exploratory distribution modeling includes KDE, Gaussian mixtures, and Student-t mixtures. These methods did not demonstrate a material predictive improvement over GARCH-FHS in the evaluated minimum-variance portfolio.
-
-The next stages are historical and hypothetical stress testing, followed by cross-strategy portfolio risk assessment.
-
-Additional model experiments on previously examined data are treated as exploratory.
-
-
-## Reproducibility
-
-Python dependencies are listed in `requirements.txt`.
-
-The original data sources and file hashes are documented in `data/external/qpm/upstream/source_manifest.json`.
-
-Risk modeling, backtesting, and diagnostic scripts are available in `scripts/`.
+Thanks for stopping by! If you'd like to see the methods, numbers, and tests in more detail, take a look at the [full report](reports/Beyond_Optimization_Research_Report.md).
